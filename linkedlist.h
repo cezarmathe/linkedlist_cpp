@@ -1,6 +1,5 @@
 
 #ifndef LINKEDLIST_H
-
 #define LINKEDLIST_H
 
 #ifndef NULL
@@ -20,7 +19,7 @@ namespace cezarmathe {
     // the address of the next node
     LinkedListNode* next;
 
-    LinkedListNode();
+    LinkedListNode(T val = NULL);
   };
 
   // the list
@@ -29,32 +28,32 @@ namespace cezarmathe {
   {
   private:
     // address of the first node
-    LinkedListNode<T>* first_node;
+    LinkedListNode<T>* first_node = new LinkedListNode<T>();
     // the size of the list
     int size;
 
     // browse to a certain list node
-    LinkedListNode<T>& browse(int counter, LinkedListNode<T>* node);
+    LinkedListNode<T>* browse(int counter, LinkedListNode<T>* node);
 
   public:
     LinkedList();
     ~LinkedList();
 
     // insert a value at the end of the list
-    void append(const T value);
+    int append(T value);
 
     // get the size of the list
     int getSize();
 
     // get a value from the list
-    T getValue(const int index);
+    T getValue(int index);
 
     // same as getValue
-    T operator[](const int index);
+    T operator[](int index);
 
     // deletes a value from the list and changes
     // the addresses for the surrounding nodes
-    void remove(const int index);
+    void remove(int index);
 
   }; 
 }
