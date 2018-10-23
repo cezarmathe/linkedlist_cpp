@@ -40,7 +40,7 @@ namespace cezarmathe {
     ~LinkedList();
 
     // insert a value at the end of the list
-    int append(T value);
+    void append(T value);
 
     // get the size of the list
     int getSize();
@@ -54,6 +54,9 @@ namespace cezarmathe {
     // deletes a value from the list and changes
     // the addresses for the surrounding nodes
     void remove(int index);
+
+    // set a value for a list item
+    void setValue(int index, T val);
 
   }; 
 }
