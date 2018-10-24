@@ -1,9 +1,23 @@
 #!/bin/bash
 
+function check_exit_status() {
+
+  if !"$1"; then
+    exit
+  fi
+
+}
+
 function compile_run() {
-  g++ "$1.cpp" -o "$1"
-  ./"$1"
+
+  COMPILE=g++ "$1.cpp" -o "$1"
+  check_exit_status $COMPILE
+
+  COMPILE=./"$1"
+  check_exit_status $COMPILE
+
   rm "$1"
+  
 }
 
 cp linkedlist.cpp test/linkedlist.cpp

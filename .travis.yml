@@ -1,2 +1,7 @@
 language : c++
-script : ./test.sh
+
+sudo: false
+
+git:
+  depth: 1
+script: ./test.sh
